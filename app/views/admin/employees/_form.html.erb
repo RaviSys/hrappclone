@@ -1,4 +1,4 @@
-<%= form_for [:admin, employee] do |form| %>
+<%= form_for [:admin, employee], html: { class: "user" } do |form| %>
   <% if employee.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
@@ -11,132 +11,135 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+  <div class="form-group row">
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name, class: "form-control rounded-0", placeholder: "First Name" %>
+    </div>
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :middle_name %>
+      <%= form.text_field :middle_name, class: "form-control rounded-0", placeholder: "Middle Name" %>
+    </div>
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, class: "form-control rounded-0", placeholder: "Last Name" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :middle_name %>
-    <%= form.text_field :middle_name %>
+  <div class="form-group row">
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :gender %>
+      <%= form.select :gender, options_for_select(Employee::GENDER, selected: employee.gender), { prompt: "Select Gender" }, { class: "form-control rounded-0" } %>
+    </div>
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :marital_status %>
+      <%= form.select :marital_status, options_for_select(Employee::MARITAL_STATUS, selected: employee.marital_status), { prompt: "Select Merital Status" }, { class: "form-control rounded-0" } %>
+    </div>
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :status %>
+      <%= form.select :status, options_for_select(Employee::STATUS, selected: employee.status), { prompt: "Select Status" }, { class: "form-control rounded-0" } %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+  <div class="form-group row">
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :blood_group %>
+      <%= form.select :blood_group, options_for_select(Employee::BLOODGROUP, selected: employee.blood_group), { prompt: "Select Bloodgroup" }, { class: "form-control rounded-0" } %>
+    </div>
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :mobile_number %>
+      <%= form.text_field :mobile_number, class: "form-control rounded-0", placeholder: "Mobile number" %>
+    </div>
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :alternate_mobile_number %>
+      <%= form.text_field :alternate_mobile_number, class: "form-control rounded-0", placeholder: "Alternate Mobile number" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.text_field :gender %>
+  <div class="form-group row">
+    <div class="col-md-6 mb-3 mb-md-0">
+      <%= form.label :permanent_address %>
+      <%= form.text_field :permanent_address, class: "form-control rounded-0", placeholder: "Permanent address" %>
+    </div>
+    <div class="col-md-6 mb-3 mb-md-0">
+      <%= form.label :present_address %>
+      <%= form.text_field :present_address, class: "form-control rounded-0", placeholder: "Present Address" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :data_of_birth %>
-    <%= form.date_select :data_of_birth %>
+  <div class="form-group row">
+    <div class="col-md-3 mb-3 mb-md-0">
+      <%= form.label :city %>
+      <%= form.text_field :city, class: "form-control rounded-0", placeholder: "City" %>
+    </div>
+    <div class="col-md-3 mb-3 mb-md-0">
+      <%= form.label :state %>
+      <%= form.text_field :state, class: "form-control rounded-0", placeholder: "State" %>
+    </div>
+    <div class="col-md-3 mb-3 mb-md-0">
+      <%= form.label :country %>
+      <%= form.text_field :country, class: "form-control rounded-0", placeholder: "Country" %>
+    </div>
+    <div class="col-md-3 mb-3 mb-md-0">
+      <%= form.label :nationality %>
+      <%= form.text_field :nationality, class: "form-control rounded-0", placeholder: "Nationality" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :date_of_joining %>
-    <%= form.date_select :date_of_joining %>
+  <div class="form-group row">
+    <div class="col-md-3 mb-3 mb-md-0">
+      <%= form.label :date_of_birth %>
+      <%= form.date_field :date_of_birth, class: "form-control rounded-0" %>
+    </div>
+    <div class="col-md-3 mb-3 mb-md-0">
+      <%= form.label :date_of_joining %>
+      <%= form.date_field :date_of_joining, class: "form-control rounded-0" %>
+    </div>
+    <div class="col-md-3 mb-3 mb-md-0">
+      <%= form.label :probation_duration %>
+      <%= form.text_field :probation_duration, class: "form-control rounded-0", placeholder: "Probation duration" %>
+    </div>
+    <div class="col-md-3 mb-3 mb-md-0">
+      <%= form.label :confirmation_date %>
+      <%= form.date_field :confirmation_date, class: "form-control rounded-0" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :marital_status %>
-    <%= form.text_field :marital_status %>
+  <div class="form-group row">
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :personal_email %>
+      <%= form.text_field :personal_email, class: "form-control rounded-0", placeholder: "Personal Email" %>
+    </div>
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :profile_picture %><br>
+      <%= form.file_field :profile_picture %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
+  <div class="form-group row">
+    <div class="col-md-12 mb-3 mb-md-0">
+      <%= form.label :about %>
+      <%= form.text_area :about, class: "form-control rounded-0", rows: "6" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :probation_duration %>
-    <%= form.text_field :probation_duration %>
-  </div>
-
-  <div class="field">
-    <%= form.label :confirmation_date %>
-    <%= form.date_select :confirmation_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :personal_email %>
-    <%= form.text_field :personal_email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :mobile_number %>
-    <%= form.text_field :mobile_number %>
-  </div>
-
-  <div class="field">
-    <%= form.label :alternate_mobile_number %>
-    <%= form.text_field :alternate_mobile_number %>
-  </div>
-
-  <div class="field">
-    <%= form.label :blood_group %>
-    <%= form.text_field :blood_group %>
-  </div>
-
-  <div class="field">
-    <%= form.label :about %>
-    <%= form.text_area :about %>
-  </div>
-
-  <div class="field">
-    <%= form.label :profile_picture %>
-    <%= form.text_field :profile_picture %>
-  </div>
-
-  <div class="field">
-    <%= form.label :present_address %>
-    <%= form.text_field :present_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :permanen_address %>
-    <%= form.text_field :permanen_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :nationality %>
-    <%= form.text_field :nationality %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state %>
-  </div>
-
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
-  </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= form.label :is_international_employee %>
     <%= form.check_box :is_international_employee %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :is_physically_challenged %>
     <%= form.check_box :is_physically_challenged %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :is_director %>
     <%= form.check_box :is_director %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
+    <%= link_to 'Cancel', admin_employees_path, class: "btn btn-outline-secondary" %>
   </div>
 <% end %>

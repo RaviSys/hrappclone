@@ -5,7 +5,7 @@ class CreateEmployees < ActiveRecord::Migration[5.2]
       t.string :middle_name
       t.string :last_name
       t.string :gender
-      t.date :data_of_birth
+      t.date :date_of_birth
       t.date :date_of_joining
       t.string :marital_status
       t.string :status
@@ -18,7 +18,7 @@ class CreateEmployees < ActiveRecord::Migration[5.2]
       t.text :about
       t.string :profile_picture
       t.string :present_address
-      t.string :permanen_address
+      t.string :permanent_address
       t.string :nationality
       t.string :city
       t.string :state
