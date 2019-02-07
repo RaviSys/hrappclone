@@ -1,4 +1,4 @@
-class Admin::RelativesController < ApplicationController
+class Admin::RelativesController < AdminController
   before_action :set_relative, only: [:show, :edit, :update, :destroy]
 
   def index

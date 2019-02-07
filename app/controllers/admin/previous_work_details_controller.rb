@@ -1,4 +1,4 @@
-class Admin::PreviousWorkDetailsController < ApplicationController
+class Admin::PreviousWorkDetailsController < AdminController
   before_action :set_previous_work_detail, only: [:show, :edit, :update, :destroy]
 
   def index
