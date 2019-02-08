@@ -11,72 +11,78 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :company_name %>
-    <%= form.text_field :company_name %>
+  <div class="form-group row">
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :company_name %>
+      <%= form.text_field :company_name,  class: "form-control rounded-0", placeholder: "Comapny Name" %>
+    </div>
+
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :designation %>
+      <%= form.text_field :designation,  class: "form-control rounded-0", placeholder: "Designation" %>
+    </div>
+
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :nature_of_work %>
+      <%= form.text_field :nature_of_work, class: "form-control rounded-0", placeholder: "Nature Of Work" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :designation %>
-    <%= form.text_field :designation %>
+  <div class="form-group row">
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :joining_date %>
+      <%= form.date_field :joining_date, class: "form-control rounded-0", placeholder: "Joining Date" %>
+    </div>
+
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :releiving_date %>
+      <%= form.date_field :releiving_date, class: "form-control rounded-0", placeholder: "Releiving Date" %>
+    </div>
+
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :role_at_work %>
+      <%= form.text_field :role_at_work, class: "form-control rounded-0", placeholder: "Role At Work" %>      
+    </div>  
+  </div> 
+
+  <div class="form-group row"> 
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :experience_in_years %>
+      <%= form.number_field :experience_in_years, class: "form-control rounded-0", placeholder: "Experience In Years" %>
+    </div>  
+
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :experience_in_months %>
+      <%= form.number_field :experience_in_months, class: "form-control rounded-0", placeholder: "Experience In Months" %>
+    </div>  
+  </div>
+    
+  <div class="form-group row">
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :company_address %>
+      <%= form.text_field :company_address, class: "form-control rounded-0", placeholder: "Comapny Address" %>
+    </div>
+
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :company_contact %>
+      <%= form.text_field :company_contact, class: "form-control rounded-0", placeholder: "Comapny Contact" %>
+    </div>
+
+    <div class="col-md-4 mb-3 mb-md-0">
+      <%= form.label :company_website %>
+      <%= form.text_field :company_website, class: "form-control rounded-0", placeholder: "company Website" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :joining_date %>
-    <%= form.date_select :joining_date %>
+  <div class="form-group row">
+    <div class="col-md-12">
+      <%= form.label :reason_for_leaving %>
+      <%= form.text_area :reason_for_leaving, class: "form-control rounded-0", placeholder: "Reason For Leaving", rows: "5" %>
+    </div>  
   </div>
-
-  <div class="field">
-    <%= form.label :releiving_date %>
-    <%= form.date_select :releiving_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :experience_in_years %>
-    <%= form.number_field :experience_in_years %>
-  </div>
-
-  <div class="field">
-    <%= form.label :experience_in_months %>
-    <%= form.number_field :experience_in_months %>
-  </div>
-
-  <div class="field">
-    <%= form.label :nature_of_work %>
-    <%= form.text_field :nature_of_work %>
-  </div>
-
-  <div class="field">
-    <%= form.label :role_at_work %>
-    <%= form.text_field :role_at_work %>
-  </div>
-
-  <div class="field">
-    <%= form.label :reason_for_leaving %>
-    <%= form.text_area :reason_for_leaving %>
-  </div>
-
-  <div class="field">
-    <%= form.label :company_address %>
-    <%= form.text_field :company_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :company_website %>
-    <%= form.text_field :company_website %>
-  </div>
-
-  <div class="field">
-    <%= form.label :company_contact %>
-    <%= form.text_field :company_contact %>
-  </div>
-
-  <div class="field">
-    <%= form.label :employee_id %>
-    <%= form.text_field :employee_id %>
-  </div>
-
+  
   <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= form.submit class: "btn btn-primary" %>
+    <%= link_to 'Cancel', admin_previous_work_details_path, class: "btn btn-outline-secondary" %>
+  </div>  
 <% end %>
