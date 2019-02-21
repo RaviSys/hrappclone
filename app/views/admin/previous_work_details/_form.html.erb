@@ -31,12 +31,12 @@
   <div class="form-group row">
     <div class="col-md-4 mb-3 mb-md-0">
       <%= form.label :joining_date %>
-      <%= form.date_field :joining_date, class: "form-control rounded-0", placeholder: "Joining Date" %>
+      <%= form.text_field :joining_date, class: "form-control rounded-0", placeholder: "Joining Date", id: "joining_date" %>
     </div>
 
     <div class="col-md-4 mb-3 mb-md-0">
       <%= form.label :releiving_date %>
-      <%= form.date_field :releiving_date, class: "form-control rounded-0", placeholder: "Releiving Date" %>
+      <%= form.text_field :releiving_date, class: "form-control rounded-0", placeholder: "Releiving Date", id: "releiving_date" %>
     </div>
 
     <div class="col-md-4 mb-3 mb-md-0">
@@ -86,3 +86,14 @@
     <%= link_to 'Cancel', admin_previous_work_details_path, class: "btn btn-outline-secondary" %>
   </div>  
 <% end %>
+
+<script type="text/javascript">
+  $(function () {
+    $('#joining_date').datetimepicker({
+      format: "YYYY-MM-DD"
+    });
+    $('#releiving_date').datetimepicker({
+      format: "YYYY-MM-DD"
+    });
+  });
+</script>
