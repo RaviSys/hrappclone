@@ -89,11 +89,11 @@
   <div class="form-group row">
     <div class="col-md-3 mb-3 mb-md-0">
       <%= form.label :date_of_birth %>
-      <%= form.date_field :date_of_birth, class: "form-control rounded-0" %>
+      <%= form.text_field :date_of_birth, class: "form-control rounded-0", id: "date_of_birth" %>
     </div>
     <div class="col-md-3 mb-3 mb-md-0">
       <%= form.label :date_of_joining %>
-      <%= form.date_field :date_of_joining, class: "form-control rounded-0" %>
+      <%= form.text_field :date_of_joining, class: "form-control rounded-0", id: "date_of_joining" %>
     </div>
     <div class="col-md-3 mb-3 mb-md-0">
       <%= form.label :probation_duration %>
@@ -143,3 +143,14 @@
     <%= link_to 'Cancel', admin_employees_path, class: "btn btn-outline-secondary" %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $(function () {
+    $('#date_of_birth').datetimepicker({
+      format: "YYYY-MM-DD"
+    });
+    $('#date_of_joining').datetimepicker({
+      format: "YYYY-MM-DD"
+    });
+  });
+</script>

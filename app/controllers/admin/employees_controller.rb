@@ -56,6 +56,6 @@ class Admin::EmployeesController < AdminController
     end
 
     def employee_params
-      params.require(:employee).permit(:first_name, :middle_name, :last_name, :gender, :data_of_birth, :date_of_joining, :marital_status, :status, :probation_duration, :confirmation_date, :personal_email, :mobile_number, :alternate_mobile_number, :blood_group, :about, :profile_picture, :present_address, :permanen_address, :nationality, :city, :state, :country, :is_international_employee, :is_physically_challenged, :is_director)
+      params.require(:employee).permit(:first_name, :middle_name, :last_name, :gender, :date_of_birth, :date_of_joining, :marital_status, :status, :probation_duration, :confirmation_date, :personal_email, :mobile_number, :alternate_mobile_number, :blood_group, :about, :profile_picture, :present_address, :permanent_address, :nationality, :city, :state, :country, :is_international_employee, :is_physically_challenged, :is_director)
     end
 end
